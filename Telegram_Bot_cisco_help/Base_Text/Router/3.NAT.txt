@@ -1,0 +1,11 @@
+NAT (трансляция адресов)
+Динамический NAT
+access-list 1 permit 192.168.1.0 0.0.0.255
+ip nat inside source list 1 interface GigabitEthernet0/1 overload
+Транслирует внутренние адреса сети 192.168.1.0/24 в публичный IP интерфейса Gi0/1.
+
+Настройка фаервола (ACL)
+access-list 100 permit tcp any any established
+access-list 100 permit icmp any any echo-reply
+access-list 100 deny ip any any
+Разрешает ответы на исходящие запросы и блокирует все остальное.

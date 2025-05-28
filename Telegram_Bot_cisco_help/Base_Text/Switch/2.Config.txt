@@ -1,0 +1,19 @@
+Пример настройки коммутатора (VLAN + SSH)
+enable
+configure terminal
+hostname SW-Office
+vlan 10
+name HR
+exit
+interface range GigabitEthernet0/1-5
+switchport mode access
+switchport access vlan 10
+exit
+crypto key generate rsa
+ip domain-name office.com
+username admin secret MySecurePass
+line vty 0 4
+transport input ssh
+login local
+exit
+write memory

@@ -1,0 +1,21 @@
+show running-config	Текущая конфигурация (RAM)
+
+show startup-config	Конфигурация при загрузке (NVRAM)
+
+show interfaces	Подробная информация о всех портах
+
+show ip interface brief	Краткий статус всех интерфейсов
+
+show mac address-table	Отображает MAC-адреса, связанные с портами
+
+show vlan brief	Информация о VLAN'ах и назначении портов
+
+show interfaces trunk	Показывает trunk-порты и VLAN'ы
+
+show spanning-tree	Состояние Spanning Tree Protocol (STP)
+
+show port-security interface [int]	Безопасность порта (если настроен Port Security)
+
+show cdp neighbors	Соседи по Cisco Discovery Protocol
+
+show power inline	Отображает информацию о питании PoE (если поддерживается)

@@ -1,0 +1,27 @@
+show running-config	Текущая конфигурация
+
+show startup-config	Конфигурация загрузки
+
+show interfaces	Полная информация по интерфейсам
+
+show ip interface brief	Кратко: IP-адреса и статусы интерфейсов
+
+show ip route	Таблица маршрутизации (статические, динамические маршруты)
+
+show ip protocols	Активные протоколы маршрутизации (RIP, OSPF и т.д.)
+
+show ip ospf neighbor	Соседи OSPF
+
+show ip rip database	База RIP
+
+show cdp neighbors	Соседи по CDP
+
+show arp	ARP-таблица (IP ⇄ MAC)
+
+show ip dhcp binding	DHCP-выданные адреса
+
+show ip nat translations	Таблица NAT-преобразований
+
+show access-lists	Список ACL (контроль доступа)
+
+show ip interface	Полная информация об IP-интерфейсах (не путать с brief)

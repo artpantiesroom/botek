@@ -1,0 +1,22 @@
+Пример настройки роутера (Статическая маршрутизация + NAT)
+enable
+configure terminal
+hostname R-Gateway
+interface GigabitEthernet0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+interface GigabitEthernet0/1
+ip address 200.100.50.1 255.255.255.252
+no shutdown
+exit
+ip route 0.0.0.0 0.0.0.0 200.100.50.2
+access-list 1 permit 192.168.1.0 0.0.0.255
+ip nat inside source list 1 interface GigabitEthernet0/1 overload
+interface GigabitEthernet0/0
+ip nat inside
+exit
+interface GigabitEthernet0/1
+ip nat outside
+exit
+write memory

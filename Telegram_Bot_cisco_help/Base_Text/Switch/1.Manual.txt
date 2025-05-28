@@ -1,0 +1,57 @@
+Terminal
+1.enable
+!Вход в привилегированный режим:
+!Переход в режим с расширенными 
+!правами (обычно требует пароля).
+
+2.configure terminal
+!Вход в режим конфигурации:
+!Позволяет вносить изменения в 
+!конфигурацию устройства.
+
+3.hostname S1
+!Настройка имени устройства:
+!Задает имя коммутатора 
+
+4.write memory  
+!Сохранение конфигурации:
+!Сохраняет текущую конфигурацию 
+!в энергонезависимую память.
+
+VLAN(Virtual Local Area Network)
+5.vlan 10
+  name Sales
+!Создает VLAN с идентификатором 10 
+!и именем "Sales".
+
+6.interface GigabitEthernet0/1
+  switchport mode access
+  switchport access vlan 10
+!Настраивает порт Gi0/1 
+!как доступный для VLAN 10.
+
+7.interface GigabitEthernet0/24
+  switchport mode trunk
+  switchport trunk allowed vlan 10,20
+!Настройка транкового порта
+!Порт Gi0/24 будет передавать 
+!трафик VLAN 10 и 20.
+
+Port Security
+8.interface GigabitEthernet0/1
+switchport port-security
+switchport port-security maximum 1
+switchport port-security violation shutdown
+!Блокирует порт при подключении 
+!устройства с неизвестным MAC-адресом.
+
+9.crypto key generate rsa
+!Генерация ключей
+
+10.line vty 0 4
+   transport input ssh
+   login local
+   exit
+   username admin secret password123
+!Разрешает доступ по SSH с логином 
+!admin и паролем password123.
